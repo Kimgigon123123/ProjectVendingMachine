@@ -23,10 +23,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int uCola, uCider, uFanta, uSoda; // 사용자가 구매한 음료 수량
     int colaPrice, ciderPrice, fantaPrice, sodaPrice; // 음료 가격
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+
+        colaCnt = intent.getIntExtra("colacnt", 10);
+        ciderCnt = intent.getIntExtra("cidercnt", 10);
+        fantaCnt = intent.getIntExtra("fantacnt", 0);
+        sodaCnt = intent.getIntExtra("sodacnt", 10);
 
         tv_cola = findViewById(R.id.tv_cola);
         tv_cider = findViewById(R.id.tv_cider);
@@ -51,15 +60,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_admin.setOnClickListener(this);
 
         ArrayList<DrinkDTO> drinkList = new ArrayList<>();
-        drinkList.add(new DrinkDTO("콜라", 800, 10));
-        drinkList.add(new DrinkDTO("사이다", 800, 10));
-        drinkList.add(new DrinkDTO("환타", 700, 0));
-        drinkList.add(new DrinkDTO("데미소다", 700, 10));
+        drinkList.add(new DrinkDTO("콜라", 800, colaCnt));
+        drinkList.add(new DrinkDTO("사이다", 800, ciderCnt));
+        drinkList.add(new DrinkDTO("환타", 700, fantaCnt));
+        drinkList.add(new DrinkDTO("데미소다", 700, sodaCnt));
 
-        colaCnt = drinkList.get(0).getCnt();
-        ciderCnt = drinkList.get(1).getCnt();
-        fantaCnt = drinkList.get(2).getCnt();
-        sodaCnt = drinkList.get(3).getCnt();
+//        colaCnt = drinkList.get(0).getCnt();
+//        ciderCnt = drinkList.get(1).getCnt();
+//        fantaCnt = drinkList.get(2).getCnt();
+//        sodaCnt = drinkList.get(3).getCnt();
 
         colaPrice = drinkList.get(0).getPrice();
         ciderPrice = drinkList.get(1).getPrice();
@@ -141,7 +150,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("buyfanta", uFanta);
             intent.putExtra("buysoda", uSoda);
             startActivity(intent);
-        } else {
+            inputMoney =0;
+            uCola = 0;
+            uCider = 0;
+            uFanta = 0;
+            uSoda = 0;
+            tv_money.setText("");
+
+        } else if(v.getId() == R.id.btn_admin) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.putExtra("cola", colaCnt);
             intent.putExtra("cider", ciderCnt);

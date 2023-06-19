@@ -136,6 +136,15 @@
                 android:layout_height="wrap_content"
                 android:text="수정하기" />
         </LinearLayout>
+
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_corrected"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수정완료"/>
 
 </LinearLayout>
