@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fantaCnt = intent.getIntExtra("fantacnt", 0);
         sodaCnt = intent.getIntExtra("sodacnt", 10);
 
-        tv_cola = findViewById(R.id.tv_cola);
-        tv_cider = findViewById(R.id.tv_cider);
-        tv_fanta = findViewById(R.id.tv_fanta);
-        tv_soda = findViewById(R.id.tv_soda);
+        tv_cola = findViewById(R.id.txt_colaCount);
+        tv_cider = findViewById(R.id.txt_ciderCount);
+        tv_fanta = findViewById(R.id.txt_fantaCount);
+        tv_soda = findViewById(R.id.txt_sodaCount);
         tv_money = findViewById(R.id.tv_money);
         edt_money = findViewById(R.id.edt_money);
         btn_cola = findViewById(R.id.btn_cola);

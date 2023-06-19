@@ -196,7 +196,7 @@
             android:textSize="20dp"
             />
         <EditText
-            android:id="@+id/edt_cash"
+            android:id="@+id/edt_money"
             android:layout_below="@+id/txt_title"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
@@ -207,7 +207,7 @@
         <Button
             android:layout_alignParentRight="true"
             android:layout_marginRight="40dp"
-            android:id="@+id/btn_cash"
+            android:id="@+id/btn_money"
             android:layout_marginTop="20dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -225,16 +225,21 @@
             />
 
         <TextView
-            android:id="@+id/txt_cash"
+            android:id="@+id/tv_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edt_cash"
+            android:layout_below="@id/edt_money"
             android:layout_marginLeft="50dp"
             android:text="잔액:"
             />
 
     </RelativeLayout>
 
+    <Button
+        android:text="관리자"
+        android:id="@+id/btn_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

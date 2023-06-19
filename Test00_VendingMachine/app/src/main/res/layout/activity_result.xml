@@ -28,7 +28,7 @@
         />
     <TextView
         android:layout_marginTop="20dp"
-        android:id="@+id/txt_colaCount"
+        android:id="@+id/tv_drinklist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -57,7 +57,7 @@
 
     <TextView
         android:layout_marginTop="20dp"
-        android:id="@+id/txt_change"
+        android:id="@+id/tv_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
